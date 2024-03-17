@@ -13,5 +13,8 @@ RUN npm install
 # Copy backend source code
 COPY quirknotes/backend ./
 
+# Expose port 4000 to run backend on
+EXPOSE 4000
+
 # Command to run backend
 CMD ["npm", "run", "dev"]
