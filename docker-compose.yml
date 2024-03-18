@@ -7,9 +7,12 @@ services:
 
   backend:
     platform: linux/arm64
-    image: aahilsamnani/quirknotes_backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile_backend
+      target: backend
     ports:
-      - "4000:4000"
+      - '4000:4000'
     environment:
       - ENV=Docker
     depends_on:
