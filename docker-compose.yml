@@ -1,11 +1,12 @@
 services:
   frontend:
+    platform: linux/arm64
     image: aahilsamnani/quirknotes_frontend
     ports:
       - "3000:80"
-    platform: linux/arm64
 
   backend:
+    platform: linux/arm64
     image: aahilsamnani/quirknotes_backend:latest
     ports:
       - "4000:4000"
@@ -13,7 +14,6 @@ services:
       - ENV=Docker
     depends_on:
       - mongodb
-    platform: linux/arm64
 
   mongodb:
     image: mongo:latest
