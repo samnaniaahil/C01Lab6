@@ -4,8 +4,6 @@ import cors from "cors";
 
 const app = express();
 const PORT = 4000;
-const dbName = "quirknotes";
-
 // Dynamically specify db url
 let mongoURL;
 if (process.env.ENV === 'Docker') {
@@ -13,6 +11,7 @@ if (process.env.ENV === 'Docker') {
 } else {
   mongoURL = 'mongodb://127.0.0.1:27017';
 }
+const dbName = "quirknotes";
 
 // Connect to MongoDB
 let db;
